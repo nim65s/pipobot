@@ -6,6 +6,10 @@ import os
 import pwd
 import signal
 import sys
+#XXX
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker

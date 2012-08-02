@@ -40,13 +40,13 @@ class CmdMpd(NotifyModule):
             self.host = self._settings['host']
             self.port = self._settings['port']
             self.pwd = self._settings['pwd']
+            if "datadir" in self._settings:
+                self.datadir = self._settings["datadir"]
         
         for name in ['host', 'port', 'pwd']:
             if not getattr(self, name):
                 raise ConfigException("Missing section %s in configuration file for module botmpd!" % name)
         
-        if "datadir" in settings["modules"]["botmpd"]:
-            self.datadir = settings["modules"]["botmpd"]["datadir"]
         self.mute = True
         # To limit flood in logs : if the bot can't connect to the server, it will only be notified
         # once in the logfile

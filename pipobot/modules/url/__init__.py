@@ -37,7 +37,7 @@ class CmdUrl(ListenModule):
         self.repost_ignore = []
 
         if hasattr(self.__class__, '_settings'):
-            self.repost = self._settings['respost'] or False
+            self.repost = self._settings['repost'] or False
             self.respost_ignore = self._settings['repost-ignore'] or []
 
     def answer(self, sender, message):

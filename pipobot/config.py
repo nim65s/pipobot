@@ -145,7 +145,7 @@ class Configuration(object):
                     modules |= module_groups[name]
 
                 else:
-                    modules |= conf_module
+                    modules.add(conf_module)
 
             self.rooms.append(Room(**kwargs))
             
